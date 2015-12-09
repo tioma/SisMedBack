@@ -5,12 +5,17 @@
 var express = require("express"),
 	app = express(),
 	bodyParser  = require("body-parser"),
-	methodOverride = require("method-override");
-	mysql = require('mysql');
+	methodOverride = require("method-override"),
+	mysql = require('mysql'),
+	config = require("./config");
+
+var connection = mysql.createConnection(config);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(methodOverride());
+
+var accounts = require("./routes/accounts.js")(app, connection);
 
 var router = express.Router();
 

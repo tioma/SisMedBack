@@ -1,9 +1,12 @@
 {
-  "name": "application-name",
+  "name": "e-commerceBack",
   "version": "0.0.1",
+  "description": "e-commerce api",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.5.1",
     "express": "^4.7.1",
+    "jsonwebtoken": "^5.4.1",
     "method-override": "^2.1.2",
     "mysql": "^2.9.0"
   }

@@ -1,7 +1,11 @@
 module.exports = {
-	"host": "127.0.0.1",
-	"user": "admin",
-	"password": "123456",
-	"database": "e-commerce",
-	"port": 3306
+	"secret": "t0d02_put02",
+	"database": {
+		"host": "127.0.0.1",
+			"user": "admin",
+			"password": "123456",
+			"database": "e-commerce",
+			"port": 3306
+	}
+
 }

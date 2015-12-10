@@ -9,7 +9,7 @@ var express = require("express"),
 	mysql = require('mysql'),
 	config = require("./config");
 
-var connection = mysql.createConnection(config);
+var connection = mysql.createConnection(config.database);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

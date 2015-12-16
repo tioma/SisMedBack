@@ -12,7 +12,7 @@ module.exports = function(app, connection){
 	 Here we are configuring our SMTP Server details.
 	 STMP is mail server which is responsible for sending and recieving email.
 	 */
-	var smtpTransport = nodemailer.createTransport("SMTP",{
+	var transporter = nodemailer.createTransport({
 		service: "Gmail",
 		auth: {
 			user: "prueba.desarrollo123@gmail.com",
@@ -69,7 +69,7 @@ module.exports = function(app, connection){
 					subject : "Favor de verificar tu cuenta de mail",
 					html : "Hola,<br> Por favor haz click en el link para verificar tu dirección de correo electrónico.<br><a href="+link+">Click aquí para verificar</a>"
 				};
-				smtpTransport.sendMail(mailOptions, function(error, response){
+				transporter.sendMail(mailOptions, function(error, response){
 					if(error){
 						console.log(error);
 						res.end("error");
@@ -86,7 +86,7 @@ module.exports = function(app, connection){
 		var id = req.query.id;
 		var check = req.query.check;
 
-		var query = "SELECT mail, check FROM users WHERE idusers = ?";
+		var query = "SELECT mail, users.check FROM users WHERE idusers = ?";
 
 		connection.query(query, [id], function(err, rows){
 			if (err){

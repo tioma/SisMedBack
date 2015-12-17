@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(methodOverride());
 
-var accounts = require("./routes/accounts.js")(app, connection);
+require("./routes/accounts.js")(app, connection);
 
 var router = express.Router();
 

@@ -191,6 +191,7 @@ module.exports = function(app, connection){
 		});
 	}
 
+	//un comentario
 	function getUserData(req, res){
 		console.log(req.decoded);
 		res.json({

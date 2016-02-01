@@ -6,6 +6,9 @@ module.exports = {
 			"password": "123456",
 			"database": "e_commerce",
 			"port": 3306
+	},
+	"redis": {
+	    "host": "127.0.0.1",
+	    "port": 6379
 	}
-
 }
